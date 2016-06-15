@@ -1,2 +1,2 @@
-# dialogs
-Python library for text-based GUI
+# dialogs.py
+Simple Python API for text-based GUI on terminal. 
