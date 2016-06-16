@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+
 import sys
 import dialogs
 from dialogs import Dialog, Button, Label, Dropdown
@@ -30,9 +32,7 @@ def cancel(button):
 
 if __name__ == '__main__':
    try:
-      items = []
-      for i in xrange(1, 35):
-         items.append({"label": "Option " + str(i), "value": "Value " + str(i)})
+      items = [{"label": "Option {}".format(i), "value": "Value {}".format(i)} for i in xrange(1,35)]
 
       dialogs.initScreen("DEMO")
 
