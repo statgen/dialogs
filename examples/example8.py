@@ -9,13 +9,18 @@ cmbPath = None
 
 def path(combobox):
    text = "".join(combobox.text)
-   paths = glob.glob(text + "*")
-   items = [None] * len(paths)
-   for i in xrange(0, len(paths)):
-      head, tail = os.path.split(paths[i])
-      items[i] = {"popup_text": tail, "textfield_text": paths[i]}
-   items.sort(key=lambda item: item["popup_text"])
-   return items
+
+   def get_items():
+      for path in glob.glob(text + '*'):
+         head, tail = os.path.split(path)
+         if os.path.isdir(path):
+            tail += '/'
+            path += '/'
+         yield {
+            "popup_text": tail,
+            "textfield_text": path,
+         }
+   return sorted(get_items(), key=lambda item: item["popup_text"])
 
 def ok(button):
    info = Dialog("", 40, 6)
