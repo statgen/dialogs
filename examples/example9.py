@@ -34,7 +34,8 @@ if __name__ == '__main__':
    try:
       items = [{"label": "Option {}".format(i), "value": "Value {}".format(i)} for i in xrange(1,35)]
 
-      dialogs.initScreen("DEMO")
+      dialogs.initScreen()
+      dialogs.setTitle("DEMO")
 
       dialog = Dialog("Dialog", 52, 8)
       dropdown = Dropdown(1, items, 12)

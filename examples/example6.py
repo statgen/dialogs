@@ -45,7 +45,8 @@ def cancel(button):
 
 if __name__ == '__main__':
    try:
-      dialogs.initScreen("DEMO")
+      dialogs.initScreen()
+      dialogs.setTitle("DEMO")
 
       dialog = Dialog("Dialog", 50, 12)
       for i in xrange(0, len(checkbox)):

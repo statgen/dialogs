@@ -30,7 +30,8 @@ def cancel(button):
 
 if __name__ == '__main__':
    try:
-      dialogs.initScreen("DEMO")
+      dialogs.initScreen()
+      dialogs.setTitle("DEMO")
 
       dialog = Dialog("Dialog", 60, 9)
       bStart = Button(1, "Start")

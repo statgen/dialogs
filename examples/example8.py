@@ -48,7 +48,8 @@ def cancel(button):
 
 if __name__ == '__main__':
    try:
-      dialogs.initScreen("DEMO")
+      dialogs.initScreen()
+      dialogs.setTitle("DEMO")
 
       dialog = Dialog("Dialog", 40, 12)
       cmbPath = Combobox(1, 36)

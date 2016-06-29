@@ -99,13 +99,18 @@ def clearInput():
    global __input__
    __input__ = None
 
-def initScreen(title):
+def initScreen():
    global __screen__
 
    if not __screen__ is None:
       return 
 
    __screen__ = curses.initscr()
+   
+def hasColors():
+   return curses.has_colors()
+
+def setTitle(title):
    maxY, maxX = __screen__.getmaxyx()
 
    curses.start_color() 
